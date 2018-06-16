@@ -11,7 +11,7 @@ void setup() {
   servo2.attach(9); //Main arm servo right
   servo3.attach(12); //Rotation Servo
   servo4.attach(10); //Top Arm servo
-  Serial.println(""); // so I can keep track of what is loaded
+  Serial.println("Serial successfully connected!"); //serial successfully connected alert
 }
 
 void loop() {
