@@ -6,12 +6,12 @@ Servo servo3;
 Servo servo4;
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(9600); //set servo baud rate in the to 9600 for a good in the middle range
   servo1.attach(8); //Main arm servo left
   servo2.attach(9); //Main arm servo right
   servo3.attach(12); //Rotation Servo
   servo4.attach(10); //Top Arm servo
-  Serial.println("servo-test"); // so I can keep track of what is loaded
+  Serial.println(""); // so I can keep track of what is loaded
 }
 
 void loop() {
@@ -28,7 +28,9 @@ void loop() {
     int n = readString.toInt();  //convert readString into number
     servo1.write(n);
     servo2.write(180-n); //turns opposide servo in desired direction
-    readString="";
+    //servo3.write(n); un-comment this for servo3 and comment out all other servos
+    //servo4.write(n); un-comment this for servo4 and comment out all other servos
+    readString=""; //makes readString back to an empty string
   }
 
 }
