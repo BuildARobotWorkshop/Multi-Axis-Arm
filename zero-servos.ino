@@ -1,16 +1,18 @@
-#include <Servo.h>
-Servo servo1;  // create servo object to control a servo
-Servo servo2;
+#include <Servo.h> // import servo library
 
+Servo mainArmLeft; // create servo object to control a servo
+Servo mainArmRight;
 
+  // void setup function only runs once
 void setup() {
-  servo1.attach(8); //attach servo orange wire to pin 8
-  servo2.attach(9); //attach servo orange wire to pin 9
+  mainArmLeft.attach(8); // attach servo orange wire to pin 8
+  mainArmRight.attach(9); // attach servo orange wire to pin 9
 
 }
 
+  // void loop function runs continuously on a loop
 void loop() {
-  servo1.write(0);
-  servo2.write(180);
+  mainArmLeft.write(0); // set mainArmServo to the 0 position
+  mainArmRight.write(180); // set mainArmServo to the 180 position
 
 }
