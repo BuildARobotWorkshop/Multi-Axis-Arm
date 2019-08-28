@@ -7,13 +7,13 @@
 
 String readString;
 #include <Servo.h> //include servo library
-Servo servo1;  // create servo objects to control servos
+Servo servo1;  // create instances of servo class or objects to control servos
 Servo servo2;
 Servo servo3;
 Servo servo4;
 
 void setup() {
-  Serial.begin(9600); //set servo baud rate in the to 9600
+  Serial.begin(9600); //set servo baud rate to 9600
   servo1.attach(7); //Main arm servo left
   servo2.attach(8); //Main arm servo right
   servo3.attach(9); //Top arm servo
