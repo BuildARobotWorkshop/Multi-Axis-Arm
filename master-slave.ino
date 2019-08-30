@@ -1,3 +1,9 @@
+/* Multi-Axis Arm Master Slave control
+This sketch allows the builders to control the multi-axis arm via the master controller.
+Author: Paul Qua
+Updated: August 30, 2019
+*/
+
 #include <Servo.h> // import servo library
 
 Servo mainArmLeft; // main arm servo left
@@ -30,18 +36,18 @@ void setup()
 void loop()
 {
     mainArmValue = analogRead(mainArmAnalog); // reads the analog value of the main arm potentiometer (value between 0 and 1023)
-    mainArmValue = map(mainArmValue, 0, 1023, 0, 180); // convert, scale anaolog value to digital servo value for main arm servos (value between 0 and 180)
+    mainArmValue = map(mainArmValue, 0, 1023, 0, 180); // convert, scale analog value to digital servo value for main arm servos (value between 0 and 180)
     mainArmLeft.write(mainArmValue); // sets the mainArmLeft servo position according to the converted, scaled value
     mainArmRight.write(180-mainArmValue); // reverses mainArmRight servo
     delay(15); // waits for the main arm servos to get to position
 
     swivelValue = analogRead(swivelAnalog); // reads the analog value of the swivel potentiometer (value between 0 and 1023)
-    swivelValue = map(swivelValue, 0, 1023, 0, 180); // convert, scale anaolog value to digital servo value for swivel servo (value between 0 and 180)
+    swivelValue = map(swivelValue, 0, 1023, 0, 180); // convert, scale analog value to digital servo value for swivel servo (value between 0 and 180)
     swivel.write(swivelValue); // sets the swivel servo position according to the converted, scaled value
     delay(15); // waits for the swivel servo to get to position
 
     topArmValue = analogRead(topArmAnalog); // reads the analog value of the topArm potentiometer (value between 0 and 1023)
-    topArmValue = map(topArmValue, 0, 1023, 0, 180); // convert, scale anaolog value to digital servo value for topArm servo (value between 0 and 180)
+    topArmValue = map(topArmValue, 0, 1023, 0, 180); // convert, scale analog value to digital servo value for topArm servo (value between 0 and 180)
     topArm.write(topArmValue); // sets the topArm servo position according to the converted, scaled value
     delay(15); // waits for the topArm servo to get to position
 }
