@@ -53,6 +53,8 @@ void loop() {
       int n = readString.toInt();  //converts readString into numbers
       servo4.write(n); //turns swivel servo
       readString="";  //clears out the string for new characters
+    } else {
+      readString="";
     }
 
 }
